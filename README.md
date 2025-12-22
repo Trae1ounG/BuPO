@@ -2,18 +2,17 @@
 <img src="assets/bupo_logo.png" width="230" alt="bupo-logo" />
     <br>
   <em>Bottom-up Policy Optimization:</em><br>
+<h2 align="center">
   Your Language Model Policy Secretly Contains Internal Policies
-</h1>
+</h2>
 
 ## 👁 Overview
 ***Bottom-up Policy Optimization*** provides a novel framework to decompose LLM policies into internal layer and modular policies, reveals distinct reasoning patterns across different model architectures, and introduces a bottom-up optimization algorithm that leverages these insights to enhance complex reasoning.
 
 <p align="center">
-  <img src="./assets/bupo.png" alt="BuPO" width="90%">
+  <img src="./assets/framework.png" alt="BuPO" width="90%">
 </p>
-<p align="center">
-  <sub>Detailed Implementation of the BuPO Algorithm</sub>
-</p>
+
 
 
 ## 🤯 Key Findings:
@@ -22,9 +21,6 @@
 - **Bottom-up Policy Optimization (BuPO)**: A novel two-phase RL algorithm that first optimizes an internal, lower-layer policy to reconstruct foundational reasoning, then fine-tunes the full model.
 - **Enhanced Reasoning Performance**: BuPO significantly outperforms standard RL on complex reasoning benchmarks.
 
-<p align="center">
-  <img src="./assets/framework.png" alt="BuPO" width="90%">
-</p>
 
 
 ## 🚀 Code Release
