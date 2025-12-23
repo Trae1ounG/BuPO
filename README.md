@@ -12,6 +12,10 @@
 
 </div>
 
+## 📰 News
+* 2025-12-23: 🔥 We release the BuPO <a href="https://github.com/Trae1ounG/BuPO">code</a> and the <a href="https://arxiv.org/abs/2512.19673">paper</a>.
+
+
 ## 👁 Overview
 ***Bottom-up Policy Optimization*** provides a novel framework to decompose LLM policies into internal layer and modular policies, reveals distinct reasoning patterns across different model architectures, and introduces a bottom-up optimization algorithm that leverages these insights to enhance complex reasoning.
 
@@ -77,3 +81,7 @@ If you find our work helpful, please cite as:
       url={https://arxiv.org/abs/2512.19673}
 }
 ```
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=Trae1ounG/BuPO&type=Date)](https://star-history.com/#Trae1ounG/BuPO&Date)
