@@ -965,14 +965,7 @@ class DataParallelPPOActor(BasePPOActor):
                             "actor/pg_clipfrac_lower": pg_clipfrac_lower.detach().item(),
                         }
                     )
-                    if self.config.version == 9 or self.config.version == 12:
-                        micro_batch_metrics.update(
-                        {
-                            "actor/pg_loss_entropy": pg_loss_entropy.detach().item() * loss_scale_factor,
-                            "actor/pg_clipfrac_entropy": pg_clipfrac_entropy.detach().item(),
-                            "actor/pg_clipfrac_lower_entropy": pg_clipfrac_lower_entropy.detach().item(),
-                        }
-                    )
+                   
                     append_to_dict(metrics, micro_batch_metrics)
                 
                 grad_norm = self._optimizer_step()
