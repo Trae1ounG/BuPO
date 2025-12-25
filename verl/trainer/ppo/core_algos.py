@@ -821,7 +821,7 @@ def compute_policy_loss_vanilla(
     response_mask: torch.Tensor,
     loss_agg_mode: str = "token-mean",
     config: Optional[ActorConfig] = None,
-    rollout_is_weights: torch.Tensor | None = None,
+    rollout_log_probs: torch.Tensor | None = None,
 ) -> tuple[torch.Tensor, dict[str, Any]]:
     """
     Compute the clipped policy objective and related metrics for PPO.
@@ -890,10 +890,6 @@ def compute_policy_loss_vanilla(
     )
 
     pg_losses = torch.where(advantages < 0, clip_pg_losses2, clip_pg_losses1)
-
-    # Apply rollout correction weights if provided
-    if rollout_is_weights is not None:
-        pg_losses = pg_losses * rollout_is_weights
 
     pg_loss = agg_loss(
         loss_mat=pg_losses, loss_mask=response_mask, loss_agg_mode=loss_agg_mode, **config.global_batch_info
