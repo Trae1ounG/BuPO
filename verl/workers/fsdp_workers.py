@@ -246,7 +246,7 @@ class ActorRolloutRefWorker(Worker, DistProfilerExtension):
             self.config.ref.log_prob_micro_batch_size_per_gpu = self.config.ref.log_prob_micro_batch_size
         
         # BuPO: Switch to our custom models
-        if hasattr(self.config.actor, internal_policy_interative) and self.config.actor.internal_policy_interative:
+        if hasattr(self.config.actor, "internal_policy_interative") and self.config.actor.internal_policy_interative:
             from verl.models.custom_model import modeling_qwen2 as custom_modeling_qwen2
             from verl.models.custom_model import modeling_qwen3 as custom_modeling_qwen3
             from verl.models.custom_model import modeling_llama as custom_modeling_llama
