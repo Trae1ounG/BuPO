@@ -892,7 +892,7 @@ def compute_policy_loss_vanilla(
     pg_losses = torch.where(advantages < 0, clip_pg_losses2, clip_pg_losses1)
 
     pg_loss = agg_loss(
-        loss_mat=pg_losses, loss_mask=response_mask, loss_agg_mode=loss_agg_mode, **config.global_batch_info
+        loss_mat=pg_losses, loss_mask=response_mask, loss_agg_mode=loss_agg_mode
     )
 
     pg_metrics = {
