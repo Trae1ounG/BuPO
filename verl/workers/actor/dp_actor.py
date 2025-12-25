@@ -828,11 +828,7 @@ class DataParallelPPOActor(BasePPOActor):
             log_probs = restore_dynamic_batch(log_probs, batch_idx_list)
             if calculate_entropy:
                 entropys = restore_dynamic_batch(entropys, batch_idx_list)
-        if self.config.internal_policy_combine:
-            internal_log_probs = torch.concat(internal_log_probs_lst, dim=0)
-            if use_dynamic_bsz:
-                internal_log_probs = restore_dynamic_batch(entropys, batch_idx_list)
-            return log_probs, entropys, internal_log_probs
+            return log_probs, entropys
         return log_probs, entropys
 
     @GPUMemoryLogger(role="dp actor", logger=logger)
@@ -851,8 +847,6 @@ class DataParallelPPOActor(BasePPOActor):
             "old_log_probs",
             "advantages",
         ]
-        if self.config.internal_policy_combine:
-            select_keys.append("old_internal_log_probs")
         if self.config.use_kl_loss:
             select_keys.append("ref_log_prob")
         if self.config.tis_imp_ratio_cap > 0:
