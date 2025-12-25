@@ -99,7 +99,6 @@ python3 -m verl.trainer.main_ppo \
     actor_rollout_ref.rollout.val_kwargs.do_sample=True \
     actor_rollout_ref.rollout.val_kwargs.n=1 \
     actor_rollout_ref.rollout.name=vllm \
-    +actor_rollout_ref.actor.entropy_grad=False \
     actor_rollout_ref.actor.internal_policy_interative=True \
     actor_rollout_ref.actor.internal_layer=${k} \
     actor_rollout_ref.actor.iterative_steps=${iterative_steps} \
